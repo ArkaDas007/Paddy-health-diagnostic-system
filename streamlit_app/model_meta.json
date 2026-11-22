@@ -1,0 +1,128 @@
+{
+  "version": "v4-speed",
+  "timestamp": "2026-11-22_14-48-44",
+  "input_shape": [
+    224,
+    224,
+    1
+  ],
+  "image_size": [
+    224,
+    224
+  ],
+  "normalization": {
+    "scale": 0.00392156862745098
+  },
+  "segmentation": {
+    "method": "otsu_plus_morphology",
+    "blur_ksize": 5,
+    "morph_close_iters": 2,
+    "morph_open_iters": 1,
+    "keep_largest_cc": true
+  },
+  "denoise": {
+    "method": "fastNlMeansDenoising",
+    "h": 10
+  },
+  "clahe": {
+    "clipLimit": 2.0,
+    "tileGridSize": [
+      8,
+      8
+    ]
+  },
+  "decision_threshold": 0.6874387860298157,
+  "output_activation": "logits",
+  "label_map": {
+    "0": "Healthy",
+    "1": "Diseased"
+  },
+  "class_to_idx": {
+    "BLB": 0,
+    "Blast": 1,
+    "healthy": 2,
+    "hispa": 3,
+    "leaf folder": 4,
+    "leaf spot": 5
+  },
+  "cnn_kwargs": {
+    "d1": 512,
+    "d2": 256
+  },
+  "architecture": "separable_conv_blocks_2to4",
+  "mixed_precision": false,
+  "xla": false,
+  "best_fold": 4,
+  "params": 310881,
+  "latency_ms": 24.425825998187065,
+  "final_metrics": {
+    "acc": 0.7625786163522013,
+    "prec": 0.9,
+    "rec": 0.8121546961325967,
+    "f1": 0.8538238141335914,
+    "auc": 0.6367254797124695
+  },
+  "model_selection_rule": "Highest AUC wins first (robust to class-imbalance-inflated accuracy/F1/recall); folds within 0.01 of top AUC are treated as equally accurate, and among those the highest F1 is kept, with lowest latency as the final tiebreaker.",
+  "fold_metrics": [
+    {
+      "fold": 1,
+      "acc": 0.8582677165354331,
+      "prec": 0.8582677165354331,
+      "rec": 1.0,
+      "f1": 0.923728813559322,
+      "auc": 0.5,
+      "train_time_s": 1711.475384099991,
+      "epochs_ran": 80,
+      "latency_ms": 24.216645997948945,
+      "focal_alpha": 0.1473477406679764
+    },
+    {
+      "fold": 2,
+      "acc": 0.84375,
+      "prec": 0.8503937007874016,
+      "rec": 0.9908256880733946,
+      "f1": 0.9152542372881356,
+      "auc": 0.7069048768710767,
+      "train_time_s": 735.4440485000378,
+      "epochs_ran": 35,
+      "latency_ms": 24.676119999494404,
+      "focal_alpha": 0.14566929133858264
+    },
+    {
+      "fold": 3,
+      "acc": 0.8503937007874016,
+      "prec": 0.8503937007874016,
+      "rec": 1.0,
+      "f1": 0.9191489361702128,
+      "auc": 0.8318713450292397,
+      "train_time_s": 1678.7223348000553,
+      "epochs_ran": 80,
+      "latency_ms": 24.831225997768342,
+      "focal_alpha": 0.14538310412573674
+    },
+    {
+      "fold": 4,
+      "acc": 0.8503937007874016,
+      "prec": 0.8503937007874016,
+      "rec": 1.0,
+      "f1": 0.9191489361702128,
+      "auc": 0.8226120857699806,
+      "train_time_s": 1093.6584533998976,
+      "epochs_ran": 52,
+      "latency_ms": 24.7657459997572,
+      "focal_alpha": 0.14538310412573674
+    },
+    {
+      "fold": 5,
+      "acc": 0.8582677165354331,
+      "prec": 0.8582677165354331,
+      "rec": 1.0,
+      "f1": 0.923728813559322,
+      "auc": 0.5,
+      "train_time_s": 1686.8134233000455,
+      "epochs_ran": 80,
+      "latency_ms": 24.246241999790072,
+      "focal_alpha": 0.1473477406679764
+    }
+  ]
+}

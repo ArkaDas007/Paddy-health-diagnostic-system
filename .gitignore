@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+env/
+.vscode/
+
+data/
+local_paddy_dataset/
+
+thermal_run/
+streamlit_app/*.keras
+
+.DS_Store
+Thumbs.db
