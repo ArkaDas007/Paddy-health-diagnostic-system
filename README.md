@@ -4,10 +4,9 @@ Combines a thermal CNN disease classifier (`predict.py`) with LightGBM quantile 
 
 ## Project Structure
 
-- `train_thermal.py` — Trains the thermal CNN and exports model artifacts and `predict.py` into `streamlit_app/`[cite: 3, 4, 6].
-- `streamlit_app/` — Contains `predict.py`, `model_best.keras`, `model_meta.json`, and `streamlit_app.py`[cite: 6].
-- `training_threshold.py` & `check_sensors.py` — Trains and runs LightGBM threshold checks using `paddy_threshold_dataset.csv` and manual/thermal health inputs[cite: 6].
-- `data/` & `local_paddy_dataset/` — Thermal image dataset folders (keep ignored in Git unless using Git LFS)[cite: 3, 6].
+- `train_thermal.py` — Trains the thermal CNN and exports model artifacts and `predict.py` into `streamlit_app/`.
+- `streamlit_app/` — Contains `predict.py`, `model_best.keras`, `model_meta.json`, and `streamlit_app.py`.
+- `training_threshold.py` & `check_sensors.py` — Trains and runs LightGBM threshold checks using `paddy_threshold_dataset.csv` and manual/thermal health inputs.
 
 ## Setup
 
